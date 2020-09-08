@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 DANG!
+Copyright (c) 2020 Kelly L. Sovacool & The Data Analysis Networking Group
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
