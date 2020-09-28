@@ -1,4 +1,6 @@
-
+rule targets:
+    input:
+        'paper/paper.pdf'
 
 rule download:
     output:

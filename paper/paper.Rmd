@@ -1,0 +1,35 @@
+---
+title: "**Applying machine learning to this totally awesome dataset**"
+author: Kelly L. Sovacool
+output:
+  pdf_document
+fontsize: 12pt
+geometry: margin=1.0in
+---
+
+```{r setup}
+knitr::opts_chunk$set(
+  tidy = TRUE,
+  echo = FALSE,
+  eval = TRUE,
+  warning = FALSE,
+  cache = FALSE
+)
+```
+
+```{r load, message=FALSE}
+library(here)
+library(knitr)
+```
+
+## Results
+
+We trained machine learning models on this totally awesome dataset.
+We measured the performance with the area under the receiver operator characteristic curve (AUROC).
+Random forest performed better than logistic regression (See Figure \ref{fig:auroc}.)
+
+```{r auroc, fig.cap="ML model performance results\\label{fig:auroc}"}
+include_graphics(here('figures/boxplot.png'))
+```
+
+
