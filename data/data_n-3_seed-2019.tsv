@@ -1,7 +1,0 @@
-model	AUROC
-logistic_regression	0.7812374927377399
-random_forest	0.8416036784965901
-logistic_regression	0.6433763460112298
-random_forest	0.6232518025920226
-logistic_regression	0.5195800523516897
-random_forest	0.8238247768753082

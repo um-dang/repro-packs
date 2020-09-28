@@ -1,0 +1,16 @@
+species	island	bill_length_mm	bill_depth_mm	flipper_length_mm	body_mass_g	sex	year
+Adelie	Biscoe	38.8	17.2	180	3800	male	2007
+Adelie	Torgersen	35.2	15.9	186	3050	female	2009
+Adelie	Torgersen	35.9	16.6	190	3050	female	2008
+Adelie	Torgersen	38.7	19	195	3450	female	2007
+Adelie	Torgersen	35.7	17	189	3350	female	2009
+Gentoo	Biscoe	45.3	13.8	208	4200	female	2008
+Gentoo	Biscoe	48.6	16	230	5800	male	2008
+Gentoo	Biscoe	46.2	14.5	209	4800	female	2007
+Gentoo	Biscoe	46.1	15.1	215	5100	male	2007
+Gentoo	Biscoe	43.3	13.4	209	4400	female	2007
+Chinstrap	Dream	50.8	18.5	201	4450	male	2009
+Chinstrap	Dream	43.2	16.6	187	2900	female	2007
+Chinstrap	Dream	50.1	17.9	190	3400	female	2009
+Chinstrap	Dream	47.5	16.8	199	3900	female	2008
+Chinstrap	Dream	52.7	19.8	197	3725	male	2007
