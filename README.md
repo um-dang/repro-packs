@@ -36,6 +36,7 @@ Organizing projects for reproducibility and headache prevention.
         - Avoid using GUI programs. If inputs change, you then have to use the GUI again to manually create the output.
     - How all output files are created should be described by a "driver script."
         - e.g. Makefile, Snakemake workflow, other workflow manager.
+        - When parameters change, easily re-create all of the downstream results by re-running the driver script.
 
 1. Note dependencies and their version numbers.
     - Note the command-line programs and software packages you use and their versions.
