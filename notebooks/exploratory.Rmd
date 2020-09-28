@@ -1,0 +1,25 @@
+---
+title: "Exploratory"
+date: '`r Sys.Date()`'
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load}
+library(tidyverse)
+```
+
+```{r data}
+ml_data <- read_tsv('data/ml_data.tsv')
+head(ml_data)
+names(ml_data)
+```
+
+```{r boxplot}
+ml_data %>% ggplot(aes(model, AUROC)) +
+    geom_boxplot()
+```
+
