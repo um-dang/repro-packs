@@ -1,13 +1,12 @@
 ---
-title: "**Applying machine learning to this totally awesome dataset**"
-author: Kelly L. Sovacool
+title: "**Observing antarctic penguins**"
 output:
   pdf_document
 fontsize: 12pt
 geometry: margin=1.0in
 ---
 
-```{r setup}
+```{r setup, echo=FALSE}
 knitr::opts_chunk$set(
   tidy = TRUE,
   echo = FALSE,
@@ -24,13 +23,11 @@ library(knitr)
 
 ## Results
 
-We trained machine learning models on this totally awesome dataset.
-We measured the performance with the area under the receiver operator characteristic curve (AUROC).
-Random forest performed better than logistic regression (See Figure \ref{fig:auroc}.)
+We measured the physiological characteristics of three species of penguins in Antarctica.
+Gentoo penguins have a much larger body mass than Chinstrap or Adelie penguins (see Figure \ref{fig:boxplot_mass}).
+The overall mean mass was... `r `.
 
-The mean AUROC for random forest was `r `.
-
-```{r auroc, fig.cap="ML model performance results\\label{fig:auroc}"}
+```{r boxplot_mass, fig.cap="Penguin mass by species\\label{fig:boxplot_mass}"}
 include_graphics(here('figures/boxplot.png'))
 ```
 

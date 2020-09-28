@@ -43,6 +43,7 @@ Organizing projects for reproducibility and headache prevention.
 
 ## More resources
 
+- Data source: [`palmerpenguins`](https://education.rstudio.com/blog/2020/07/palmerpenguins-cran/)
 - [How repro-packs can save your future-self](https://lorenabarba.com/blog/how-repro-packs-can-save-your-future-self/)
 - [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285)
 - [A Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424)

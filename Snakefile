@@ -4,9 +4,9 @@ rule targets:
 
 rule download:
     output:
-        tsv="data/ml_data.tsv"
+        tsv="data/penguin_data.tsv"
     params:
-        url='https://raw.githubusercontent.com/um-dang/repro-packs/make-data/data/data_n-3_seed-2019.tsv'
+        url='https://raw.githubusercontent.com/um-dang/repro-packs/make-data/data/penguins_n-15.tsv'
     shell:
         "wget -O {output.tsv} {params.url}"
 

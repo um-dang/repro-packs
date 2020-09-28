@@ -13,13 +13,13 @@ library(tidyverse)
 ```
 
 ```{r data}
-ml_data <- read_tsv('data/ml_data.tsv')
-head(ml_data)
-names(ml_data)
+penguin_data <- read_tsv('data/penguin_data.tsv')
+head(penguin_data)
+names(penguin_data)
 ```
 
 ```{r boxplot}
-ml_data %>% ggplot(aes(model, AUROC)) +
+penguin_data %>% ggplot(aes(species, body_mass_g)) +
     geom_boxplot()
 ```
 
