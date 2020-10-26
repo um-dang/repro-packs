@@ -1,5 +1,6 @@
 ---
-title: "**Observing antarctic penguins**"
+title: "**Observing Antarctic Penguins**"
+date: '`r Sys.Date()`'
 output:
   pdf_document
 fontsize: 12pt
@@ -11,6 +12,7 @@ knitr::opts_chunk$set(
   tidy = TRUE,
   echo = FALSE,
   eval = TRUE,
+  message = FALSE,
   warning = FALSE,
   cache = FALSE
 )
@@ -19,16 +21,34 @@ knitr::opts_chunk$set(
 ```{r load, message=FALSE}
 library(here)
 library(knitr)
+library(tidyverse)
+penguin_data <- read_tsv(here('data', 'penguin_data.tsv'))
 ```
 
 ## Results
 
-We measured the physiological characteristics of three species of penguins in Antarctica.
-Gentoo penguins have a much larger body mass than Chinstrap or Adelie penguins (see Figure \ref{fig:boxplot_mass}).
-The overall mean mass was... `r `.
+Here we report the physiological characteristics of three species of penguins in Antarctica.
+The overall mean body mass of all penguins was `r round(mean(penguin_data$body_mass_g), 2)`.
+Mean body mass stratified by species is reported below.
+Gentoo penguins have a larger body mass than Chinstrap or Adelie penguins (see Figure \ref{fig:boxplot_mass}).
+
+
+```{r mean_mass}
+penguin_data %>% 
+  group_by(species) %>% 
+  select(-year) %>% 
+  filter(!is.na(body_mass_g)) %>% 
+  summarize(`Mean Mass (g)` = mean(body_mass_g)) %>% 
+  rename(Species = species) %>% 
+  kable()
+```
 
 ```{r boxplot_mass, fig.cap="Penguin mass by species\\label{fig:boxplot_mass}"}
-include_graphics(here('figures/boxplot.png'))
+include_graphics(here('figures', 'boxplot.png'))
 ```
 
 
+### Code Availability
+
+Code for all data analysis and for generating the manuscript is available at
+[https://github.com/um-dang/repro-packs](https://github.com/um-dang/repro-packs).

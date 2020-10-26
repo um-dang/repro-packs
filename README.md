@@ -2,6 +2,21 @@
 
 Organizing projects for reproducibility and headache prevention.
 
+Making your research projects reproducible ensures that anyone,
+whether that’s another scientist reading your publication or you six months from now,
+can use the same methods and data to find the same results.
+Reproducible research is not only a good practice to validate results and to allow others to build off prior work,
+it also makes your life easier when you need to update software,
+try out different parameters in a pipeline, or find bugs in your code!
+A reproducibility package (“repro-pack”, coined by [Lorena Barba](https://lorenabarba.com/))
+is a collection of all the data, code, and figures used to produce the results of a research paper in an automated fashion.
+We’ll walk through an example of how to organize a project as a repro-pack and
+share it online so your work will be maximally reproducible.
+
+
+- **Reproducibility** is the ability to regenerate a result with the same data set and data analysis pipeline.
+- **Replicability** is the ability to produce a consistent result with an independent experiment asking the same scientific question.
+
 ## Outline
 
 1. Every paper is a self-contained directory/folder.
@@ -18,6 +33,7 @@ Organizing projects for reproducibility and headache prevention.
     ├── Snakefile
     ├── code
     ├── data
+    ├── environment.yml
     ├── figures
     ├── notebooks
     ├── paper
@@ -29,21 +45,28 @@ Organizing projects for reproducibility and headache prevention.
     - Keeps a historical record for tracking down bugs.
     - Frees you to try new things without fear of breaking anything.
     - Makes collaborating easier.
-    - Serves as an online backup in case your computer dies.
 
 1. Automate everything.
     - All outputs (figures, summary tables, manuscript, etc) should be created by code.
         - Avoid using GUI programs. If inputs change, you then have to use the GUI again to manually create the output.
-    - How all output files are created should be described by a "driver script."
-        - e.g. Makefile, Snakemake workflow, other workflow manager.
+    - How all output files are created should be described by a **driver script**.
+        - e.g. Make, Snakemake, Nextflow, other workflow manager.
+    - Consider using a literate programming tool (e.g. R Markdown, Jupyter Notebook) to write your manuscript.
+        - For every number or statistic reported in the paper, it should be easy to trace how it was computed.
 
 1. Note dependencies and their version numbers.
     - Note the command-line programs and software packages you use and their versions.
-    - e.g. use a conda environment file, Dockerfile, etc.
+    - e.g. use a [conda environment file](environment.yml), Dockerfile, etc.
+
+1. Share your repro-pack.
+    - Include a [license file](LICENSE.md) so others will know if & how they're allowed to use your code.
+    - Include a [readme file](README.md) and describe how to download and get started using your project.
+    - [GitHub](https://github.com) is a popular choice for sharing code and collaborating.
+    - Also serves as an online backup in case your computer dies.
 
 ## More resources
 
-- Data source: [`palmerpenguins`](https://education.rstudio.com/blog/2020/07/palmerpenguins-cran/)
-- [How repro-packs can save your future-self](https://lorenabarba.com/blog/how-repro-packs-can-save-your-future-self/)
-- [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285)
-- [A Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424)
+- Data source: [`palmerpenguins`](https://education.rstudio.com/blog/2020/07/palmerpenguins-cran/).
+- [How repro-packs can save your future-self](https://lorenabarba.com/blog/how-repro-packs-can-save-your-future-self/).
+- [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285).
+- [A Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424).

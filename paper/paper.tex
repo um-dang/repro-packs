@@ -6,12 +6,13 @@
   12pt,
 ]{article}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
+\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -37,11 +38,20 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Observing antarctic penguins},
+  pdftitle={Observing Antarctic Penguins},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1.0in]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -59,10 +69,13 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 
-\title{\textbf{Observing antarctic penguins}}
+\title{\textbf{Observing Antarctic Penguins}}
 \author{}
-\date{\vspace{-2.5em}}
+\date{\vspace{-2.5em}2020-10-26}
 
 \begin{document}
 \maketitle
@@ -70,15 +83,33 @@
 \hypertarget{results}{%
 \subsection{Results}\label{results}}
 
-We measured the physiological characteristics of three species of
-penguins in Antarctica. Gentoo penguins have a much larger body mass
-than Chinstrap or Adelie penguins (see Figure \ref{fig:boxplot_mass}).
-The overall mean mass was\ldots{} \texttt{r}.
+Here we report the physiological characteristics of three species of
+penguins in Antarctica. The overall mean body mass of all penguins was
+3958.33. Mean body mass stratified by species is reported below. Gentoo
+penguins have a larger body mass than Chinstrap or Adelie penguins (see
+Figure \ref{fig:boxplot_mass}).
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+Species & Mean Mass (g)\tabularnewline
+\midrule
+\endhead
+Adelie & 3340\tabularnewline
+Chinstrap & 3675\tabularnewline
+Gentoo & 4860\tabularnewline
+\bottomrule
+\end{longtable}
 
 \begin{figure}
 \centering
 \includegraphics{/Users/kelly/projects/dang/repro-packs/figures/boxplot.png}
 \caption{Penguin mass by species\label{fig:boxplot_mass}}
 \end{figure}
+
+\hypertarget{code-availability}{%
+\subsubsection{Code Availability}\label{code-availability}}
+
+Code for all data analysis and for generating the manuscript is
+available at \url{https://github.com/um-dang/repro-packs}.
 
 \end{document}

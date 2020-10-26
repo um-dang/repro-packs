@@ -10,7 +10,7 @@ rule download:
     shell:
         "wget -O {output.tsv} {params.url}"
 
-rule plot:
+rule boxplot:
     input:
         tsv=rules.download.output,
         R='code/boxplot.R'
@@ -24,7 +24,7 @@ rule render_paper:
     input:
         Rmd='paper/paper.Rmd',
         R='code/render.R',
-        plots=rules.plot.output.png,
+        plots=rules.boxplot.output.png,
     output:
         pdf='paper/paper.pdf'
     script:
