@@ -50,5 +50,5 @@ include_graphics(here('figures', 'boxplot.png'))
 
 ### Code Availability
 
-Code for all data analysis and for generating the manuscript is available at
+All code used for this manuscript is available at
 [https://github.com/um-dang/repro-packs](https://github.com/um-dang/repro-packs).

@@ -51,7 +51,7 @@ share it online so your work will be maximally reproducible.
         - Avoid using GUI programs. If inputs change, you then have to use the GUI again to manually create the output.
     - How all output files are created should be described by a **driver script**.
         - e.g. Make, Snakemake, Nextflow, other workflow manager.
-    - Consider using a literate programming tool (e.g. R Markdown, Jupyter Notebook) to write your manuscript.
+    - Consider using **literate programming** (e.g. R Markdown, Jupyter Notebook) to write your manuscript, so you can mix code and prose in the same document.
         - For every number or statistic reported in the paper, it should be easy to trace how it was computed.
 
 1. Note dependencies and their version numbers.
