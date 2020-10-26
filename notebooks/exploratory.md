@@ -6,16 +6,9 @@ Exploratory Analysis
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+## 15 Sept. 2020
 
-    ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-    ## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
-    ## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
-    ## ✓ readr   1.4.0     ✓ forcats 0.5.0
-
-    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## x dplyr::filter() masks stats::filter()
-    ## x dplyr::lag()    masks stats::lag()
+Reading the data and plotting body mass.
 
 ``` r
 penguin_data <- read_tsv('data/penguin_data.tsv')
@@ -62,4 +55,30 @@ penguin_data %>% ggplot(aes(species, body_mass_g)) +
     geom_boxplot()
 ```
 
-![](figures/boxplot-1.png)<!-- -->
+![](figures/boxplot_species-1.png)<!-- -->
+
+``` r
+penguin_data %>% ggplot(aes(species, body_mass_g, color = sex)) +
+    geom_boxplot()
+```
+
+![](figures/boxplot_sex-1.png)<!-- -->
+
+## 19 Sept. 2020
+
+Computing summary statistics.
+
+``` r
+penguin_data %>% group_by(species) %>% 
+    select(-year) %>% 
+    summarize(across(where(is.numeric), ~ mean(.x)))
+```
+
+    ## `summarise()` ungrouping output (override with `.groups` argument)
+
+    ## # A tibble: 3 x 5
+    ##   species   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+    ##   <chr>              <dbl>         <dbl>             <dbl>       <dbl>
+    ## 1 Adelie              36.9          17.1              188         3340
+    ## 2 Chinstrap           48.9          17.9              195.        3675
+    ## 3 Gentoo              45.9          14.6              214.        4860

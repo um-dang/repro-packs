@@ -15,6 +15,10 @@ knitr::opts_chunk$set(echo = TRUE,
 library(tidyverse)
 ```
 
+## 15 Sept. 2020
+
+Reading the data and plotting body mass.
+
 ```{r data}
 penguin_data <- read_tsv('data/penguin_data.tsv')
 head(penguin_data)
@@ -30,6 +34,10 @@ penguin_data %>% ggplot(aes(species, body_mass_g)) +
 penguin_data %>% ggplot(aes(species, body_mass_g, color = sex)) +
     geom_boxplot()
 ```
+
+## 19 Sept. 2020
+
+Computing summary statistics.
 
 ```{r summarize}
 penguin_data %>% group_by(species) %>% 
