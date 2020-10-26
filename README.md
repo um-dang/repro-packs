@@ -17,6 +17,24 @@ share it online so your work will be maximally reproducible.
 - **Reproducibility** is the ability to regenerate a result with the same data set and data analysis pipeline.
 - **Replicability** is the ability to produce a consistent result with an independent experiment asking the same scientific question.
 
+## Quick Start
+
+1. Clone this repo
+    ``` sh
+    git clone https://github.com/um-dang/repro-packs
+    ```
+
+1. Install dependencies
+    ``` sh
+    conda env create -f environment.yml -n repropack
+    conda activate repropack
+    ```
+
+1. Run the workflow
+    ``` sh
+    snakemake --cores 2
+    ```
+
 ## Outline
 
 1. Every paper is a self-contained directory/folder.
