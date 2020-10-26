@@ -59,6 +59,10 @@ share it online so your work will be maximally reproducible.
     └── results
     ```
 
+1. Note dependencies and their version numbers.
+    - Note the command-line programs and software packages you use and their versions.
+    - e.g. use a [conda environment file](environment.yml), Dockerfile, etc.
+
 1. Version control.
     - Keeps a historical record for tracking down bugs.
     - Frees you to try new things without fear of breaking anything.
@@ -71,10 +75,6 @@ share it online so your work will be maximally reproducible.
         - e.g. Make, Snakemake, Nextflow, other workflow manager.
     - Consider using **literate programming** (e.g. R Markdown, Jupyter Notebook) to write your manuscript, so you can mix code and prose in the same document.
         - For every number or statistic reported in the paper, it should be easy to trace how it was computed.
-
-1. Note dependencies and their version numbers.
-    - Note the command-line programs and software packages you use and their versions.
-    - e.g. use a [conda environment file](environment.yml), Dockerfile, etc.
 
 1. Share your repro-pack.
     - Include a [license file](LICENSE.md) so others will know if & how they're allowed to use your code. See [choosealicense.com](https://choosealicense.com/) for guidance on choosing an appropriate license for your needs.
