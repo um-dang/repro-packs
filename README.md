@@ -59,10 +59,11 @@ share it online so your work will be maximally reproducible.
     - e.g. use a [conda environment file](environment.yml), Dockerfile, etc.
 
 1. Share your repro-pack.
-    - Include a [license file](LICENSE.md) so others will know if & how they're allowed to use your code.
+    - Include a [license file](LICENSE.md) so others will know if & how they're allowed to use your code. See [choosealicense.com](https://choosealicense.com/) for guidance on choosing an appropriate license for your needs.
     - Include a [readme file](README.md) and describe how to download and get started using your project.
     - [GitHub](https://github.com) is a popular choice for sharing code and collaborating.
-    - Also serves as an online backup in case your computer dies.
+        - You can keep the repo private until you're ready to share it with the world.
+        - Also serves as an online backup in case your computer dies.
 
 ## More resources
 
