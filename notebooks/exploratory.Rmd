@@ -1,14 +1,17 @@
 ---
-title: "Exploratory"
+title: "Exploratory Analysis"
 date: '`r Sys.Date()`'
-output: github_document
+output: 
+  github_document:
+    html_preview: false
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,
+                      fig.path = 'figures/')
 ```
 
-```{r load}
+```{r load, message = FALSE}
 library(tidyverse)
 ```
 
@@ -18,8 +21,19 @@ head(penguin_data)
 names(penguin_data)
 ```
 
-```{r boxplot}
+```{r boxplot_species}
 penguin_data %>% ggplot(aes(species, body_mass_g)) +
     geom_boxplot()
+```
+
+```{r boxplot_sex}
+penguin_data %>% ggplot(aes(species, body_mass_g, color = sex)) +
+    geom_boxplot()
+```
+
+```{r summarize}
+penguin_data %>% group_by(species) %>% 
+    select(-year) %>% 
+    summarize(across(where(is.numeric), ~ mean(.x)))
 ```
 
